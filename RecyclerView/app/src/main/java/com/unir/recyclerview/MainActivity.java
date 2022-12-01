@@ -47,7 +47,10 @@ public class MainActivity extends AppCompatActivity {
                             }
                             @Override
                             public void onLongItemClick(View view, int position) {
+                                String nome = filmes.get(position).getTituloFilme();
                                 Toast.makeText(getApplicationContext(), "Clique longo!", Toast.LENGTH_LONG).show();
+                                filmes.remove(position);
+                                adapter.notifyDataSetChanged();
                             }
                             @Override
                             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
